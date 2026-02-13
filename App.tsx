@@ -11,7 +11,7 @@ import { Compass, Book, LocateFixed, Search, X, MapPin, Globe } from 'lucide-rea
 // Custom Logo Component
 const RamenLogo = () => (
   <div className="ramen-logo">
-    <img src="/ramen-logo.svg" alt="拉麵" style={{ width: '100%', height: '100%' }} />
+    <img src={import.meta.env.BASE_URL + 'image.png'} alt="拉麵" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
   </div>
 );
 
