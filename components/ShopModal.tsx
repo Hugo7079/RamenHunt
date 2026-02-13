@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Star, Plus, ChefHat, Pencil, ChevronDown } from 'lucide-react';
+import { X, Star, Plus, ChefHat, Pencil, ChevronDown, Trash2 } from 'lucide-react';
 import { Shop, BowlLog, NOODLE_HARDNESS_OPTIONS, SOUP_OPTIONS, FAT_OPTIONS } from '../types';
 
 interface ShopModalProps {
@@ -8,11 +8,15 @@ interface ShopModalProps {
   onClose: () => void;
   onAddLog: (log: Omit<BowlLog, 'id' | 'shopId' | 'date'>) => void;
   onUpdateLog: (logId: string, log: Omit<BowlLog, 'id' | 'shopId' | 'date'>) => void;
+  onDeleteLog: (logId: string) => void;
+  onDeleteShop: (shopId: string) => void;
 }
 
-export const ShopModal: React.FC<ShopModalProps> = ({ shop, logs, onClose, onAddLog, onUpdateLog }) => {
+export const ShopModal: React.FC<ShopModalProps> = ({ shop, logs, onClose, onAddLog, onUpdateLog, onDeleteLog, onDeleteShop }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [editingLogId, setEditingLogId] = useState<string | null>(null);
+  const [confirmDeleteLogId, setConfirmDeleteLogId] = useState<string | null>(null);
+  const [confirmDeleteShop, setConfirmDeleteShop] = useState(false);
   
   // Form State
   const [formData, setFormData] = useState({
@@ -88,9 +92,18 @@ export const ShopModal: React.FC<ShopModalProps> = ({ shop, logs, onClose, onAdd
               {shop.address}
             </p>
           </div>
-          <button onClick={onClose} className="btn-close-modal">
-            <X size={20} />
-          </button>
+          <div className="shop-modal-header-actions">
+            <button 
+              onClick={() => setConfirmDeleteShop(true)} 
+              className="btn-delete-shop"
+              title="刪除店家"
+            >
+              <Trash2 size={18} />
+            </button>
+            <button onClick={onClose} className="btn-close-modal">
+              <X size={20} />
+            </button>
+          </div>
         </div>
         
         <div className="shop-modal-stats">
@@ -101,6 +114,17 @@ export const ShopModal: React.FC<ShopModalProps> = ({ shop, logs, onClose, onAdd
           <div className="shop-log-count">{shopLogs.length} 碗紀錄</div>
         </div>
       </div>
+
+      {/* Confirm Delete Shop */}
+      {confirmDeleteShop && (
+        <div className="confirm-delete-bar">
+          <span>確定要刪除「{shop.name}」及所有紀錄嗎？</span>
+          <div className="confirm-delete-actions">
+            <button onClick={() => setConfirmDeleteShop(false)} className="btn-confirm-cancel">取消</button>
+            <button onClick={() => onDeleteShop(shop.id)} className="btn-confirm-delete">刪除</button>
+          </div>
+        </div>
+      )}
 
       {/* Content Area */}
       <div className="shop-modal-content custom-scrollbar">
@@ -255,8 +279,26 @@ export const ShopModal: React.FC<ShopModalProps> = ({ shop, logs, onClose, onAdd
                       >
                         <Pencil size={14} />
                       </button>
+                      <button 
+                        onClick={() => setConfirmDeleteLogId(log.id)}
+                        className="btn-delete-log"
+                        title="刪除紀錄"
+                      >
+                        <Trash2 size={14} />
+                      </button>
                     </div>
                   </div>
+
+                  {/* Confirm Delete Log */}
+                  {confirmDeleteLogId === log.id && (
+                    <div className="confirm-delete-inline">
+                      <span>確定刪除這筆紀錄？</span>
+                      <div className="confirm-delete-actions">
+                        <button onClick={() => setConfirmDeleteLogId(null)} className="btn-confirm-cancel">取消</button>
+                        <button onClick={() => { onDeleteLog(log.id); setConfirmDeleteLogId(null); }} className="btn-confirm-delete">刪除</button>
+                      </div>
+                    </div>
+                  )}
                   
                   <div className="log-tags">
                     <span className="log-tag">麵: {log.noodleHardness}</span>

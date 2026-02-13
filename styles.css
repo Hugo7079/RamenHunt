@@ -1116,6 +1116,21 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.btn-delete-log {
+  padding: 0.375rem;
+  color: var(--color-neutral-500);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+}
+
+.btn-delete-log:hover {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
 .log-tags {
   display: flex;
   flex-wrap: wrap;
@@ -1817,3 +1832,116 @@ body {
     padding: 0.875rem;
   }
 }
+
+/* ...existing code... */
+
+.shop-modal-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.btn-delete-shop {
+  color: var(--color-neutral-500);
+  background: transparent;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 9999px;
+  transition: all 0.2s;
+}
+
+.btn-delete-shop:hover {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.btn-close-modal {
+  /* ...existing code... */
+}
+
+/* ...existing code... */
+
+.btn-delete-log {
+  padding: 0.375rem;
+  color: var(--color-neutral-500);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+}
+
+.btn-delete-log:hover {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Confirm Delete Bar (shop) */
+.confirm-delete-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  border-bottom: 1px solid rgba(239, 68, 68, 0.3);
+  font-size: 0.875rem;
+  color: #fca5a5;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Confirm Delete Inline (log) */
+.confirm-delete-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  color: #fca5a5;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.confirm-delete-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.btn-confirm-cancel {
+  padding: 0.25rem 0.75rem;
+  background: transparent;
+  border: 1px solid var(--color-neutral-600);
+  color: var(--color-gray-300);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.8125rem;
+  transition: all 0.2s;
+}
+
+.btn-confirm-cancel:hover {
+  background-color: var(--color-neutral-700);
+}
+
+.btn-confirm-delete {
+  padding: 0.25rem 0.75rem;
+  background-color: #dc2626;
+  border: none;
+  color: var(--color-white);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  transition: all 0.2s;
+}
+
+.btn-confirm-delete:hover {
+  background-color: #b91c1c;
+}
+
+/* ...existing code... */

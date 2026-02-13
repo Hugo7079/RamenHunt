@@ -207,6 +207,22 @@ const App: React.FC = () => {
     saveLogs(updatedLogs);
   };
 
+  const handleDeleteLog = (logId: string) => {
+    const updatedLogs = logs.filter(log => log.id !== logId);
+    setLogs(updatedLogs);
+    saveLogs(updatedLogs);
+  };
+
+  const handleDeleteShop = (shopId: string) => {
+    const updatedShops = shops.filter(s => s.id !== shopId);
+    const updatedLogs = logs.filter(l => l.shopId !== shopId);
+    setShops(updatedShops);
+    setLogs(updatedLogs);
+    saveShops(updatedShops);
+    saveLogs(updatedLogs);
+    setSelectedShopId(null);
+  };
+
   const handleCompassResult = (result: CompassResult) => {
     setIsCompassOpen(false);
     setSelectedShopId(result.shop.id);
@@ -375,6 +391,8 @@ const App: React.FC = () => {
         onClose={() => setSelectedShopId(null)}
         onAddLog={handleAddLog}
         onUpdateLog={handleUpdateLog}
+        onDeleteLog={handleDeleteLog}
+        onDeleteShop={handleDeleteShop}
       />
 
       <CompassModal 
