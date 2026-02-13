@@ -153,7 +153,8 @@ const App: React.FC = () => {
   };
 
   const handleMapClickForAdd = (loc: Location) => {
-    if (!selectedShopId && !isSearchOpen) {
+    if (!isSearchOpen) {
+      setSelectedShopId(null);
       setAddShopData({ location: loc });
     }
   };
