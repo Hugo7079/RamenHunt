@@ -1,0 +1,7 @@
+{
+  "name": "麵對現實：拉麵職人私藏地圖",
+  "description": "Ramen Reality: A personal map for ramen enthusiasts to track shops, log specific bowls, and decide where to eat next using a localized Taiwanese interface.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

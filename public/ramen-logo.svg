@@ -1,0 +1,36 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pin Shape Background -->
+  <path d="M250 50 C150 50 75 125 75 225 C75 325 250 450 250 450 C250 450 425 325 425 225 C425 125 350 50 250 50 Z" fill="#1a1a1a"/>
+  
+  <!-- Red Circle Background -->
+  <circle cx="250" cy="200" r="120" fill="#D32F2F"/>
+  
+  <!-- Bowl -->
+  <ellipse cx="250" cy="220" rx="70" ry="15" fill="#8B4513"/>
+  <path d="M180 220 Q180 280 250 290 Q320 280 320 220" fill="#C41E3A" stroke="#8B4513" stroke-width="4"/>
+  <ellipse cx="250" cy="220" rx="70" ry="12" fill="#DC143C"/>
+  
+  <!-- Decorative pattern on bowl -->
+  <path d="M190 230 Q195 235 200 230 Q205 235 210 230 Q215 235 220 230 Q225 235 230 230 Q235 235 240 230 Q245 235 250 230 Q255 235 260 230 Q265 235 270 230 Q275 235 280 230 Q285 235 290 230 Q295 235 300 230 Q305 235 310 230" 
+        stroke="#FFD700" stroke-width="2" fill="none"/>
+  
+  <!-- Noodles -->
+  <path d="M240 190 Q245 160 250 190 Q255 160 260 190 Q265 160 270 190" 
+        stroke="#F5DEB3" stroke-width="8" fill="none" stroke-linecap="round"/>
+  
+  <!-- Soup -->
+  <ellipse cx="250" cy="235" rx="55" ry="30" fill="#FFE4B5" opacity="0.8"/>
+  
+  <!-- Toppings -->
+  <circle cx="235" cy="230" r="8" fill="#FF6B6B"/>
+  <circle cx="265" cy="235" r="6" fill="#4CAF50"/>
+  <circle cx="250" cy="240" r="5" fill="#FF9800"/>
+  
+  <!-- Chopsticks -->
+  <rect x="290" y="140" width="6" height="100" fill="#D2691E" transform="rotate(35 293 190)"/>
+  <rect x="300" y="135" width="6" height="100" fill="#A0522D" transform="rotate(40 303 185)"/>
+  
+  <!-- Highlights -->
+  <circle cx="230" cy="210" r="8" fill="white" opacity="0.3"/>
+  <circle cx="270" cy="215" r="6" fill="white" opacity="0.3"/>
+</svg>

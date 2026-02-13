@@ -1,0 +1,20 @@
+{
+  "name": "麵對現實：拉麵職人私藏地圖",
+  "short_name": "麵對現實",
+  "description": "專業拉麵愛好者的私藏地圖與品鑑日誌",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#D32F2F",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/ramen-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["food", "lifestyle"],
+  "screenshots": []
+}
